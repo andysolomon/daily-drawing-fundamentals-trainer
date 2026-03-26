@@ -1,0 +1,29 @@
+[ ] Phase 1 - Foundation and App Shell
+[ ] #1  [DDT-0001] Configure Clerk auth and protected app routes (P0, M)
+[ ] #2  [DDT-0002] Create Convex schema for users, lessons, submissions, feedback (P0, M)
+[ ] #3  [DDT-0003] Build app shell with lesson hub and profile nav (P1, M)
+
+[ ] Phase 2 - Lesson Engine
+[ ] #4  [DDT-0004] Implement lesson sequence and unlock rule model (P0, M)
+[ ] #5  [DDT-0005] Build lesson detail page with completion flow (P0, M)
+[ ] #6  [DDT-0006] Capture lesson start/completion analytics events (P1, S)
+
+[ ] Phase 3 - Sketch Submission + AI Feedback
+[ ] #7  [DDT-0007] Implement sketch upload pipeline (P0, L)
+[ ] #8  [DDT-0008] Build AI feedback adapter with structured response contract (P0, L)
+[ ] #9  [DDT-0009] Build feedback UI for actionable correction hints (P0, M)
+
+[ ] Phase 4 - Habit and Retention Loop
+[ ] #10 [DDT-0010] Implement streak/day tracking and milestone rules (P0, M)
+[ ] #11 [DDT-0011] Build progress dashboard with habit indicators (P1, M)
+[ ] #12 [DDT-0012] Add week-1 lesson-3 retention instrumentation (P1, S)
+
+[ ] Phase 5 - Monetization
+[ ] #13 [DDT-0013] Implement subscription plans and entitlement checks (P0, L)
+[ ] #14 [DDT-0014] Gate premium content/feedback tiers (P1, M)
+[ ] #15 [DDT-0015] Build billing management experience (P1, M)
+
+[ ] Phase 6 - Hardening and Launch
+[ ] #16 [DDT-0016] Add Jest tests for lesson rules and feedback rendering (P0, M)
+[ ] #17 [DDT-0017] Add Playwright e2e flows for auth, lesson, upload, feedback (P0, M)
+[ ] #18 [DDT-0018] Complete production readiness checklist for Vercel deploy (P1, S)
