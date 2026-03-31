@@ -1,0 +1,134 @@
+[
+  {
+    "slug": "basic-shapes",
+    "title": "Basic Shapes",
+    "description": "Master circles, squares, and triangles — the building blocks of every drawing.",
+    "order": 1,
+    "track": "fundamentals",
+    "difficulty": "beginner",
+    "isPremium": false,
+    "instructions": "Draw 5 circles, 5 squares, and 5 triangles. Focus on even proportions and clean closure where lines meet. Use a single continuous stroke for each shape.",
+    "estimatedMinutes": 10
+  },
+  {
+    "slug": "line-quality",
+    "title": "Line Quality & Confidence",
+    "description": "Practice drawing confident, smooth lines from your shoulder instead of your wrist.",
+    "order": 2,
+    "track": "fundamentals",
+    "difficulty": "beginner",
+    "isPremium": false,
+    "instructions": "Draw 10 straight lines across the page, then 10 curved lines. Each line should be drawn in a single, confident stroke. Focus on consistent pressure and smooth motion.",
+    "estimatedMinutes": 10
+  },
+  {
+    "slug": "contour-drawing",
+    "title": "Contour Drawing",
+    "description": "Train your eye-hand coordination by following the edges of an object without looking at the paper.",
+    "order": 3,
+    "track": "fundamentals",
+    "difficulty": "beginner",
+    "isPremium": false,
+    "instructions": "Choose a simple object (a cup, a shoe, your hand). Draw its outline in one continuous line without lifting your pen. Don't look at the paper — keep your eyes on the object.",
+    "estimatedMinutes": 15
+  },
+  {
+    "slug": "negative-space",
+    "title": "Negative Space",
+    "description": "Learn to see and draw the spaces between and around objects rather than the objects themselves.",
+    "order": 4,
+    "track": "fundamentals",
+    "difficulty": "beginner",
+    "isPremium": false,
+    "instructions": "Place a chair or stool in front of you. Instead of drawing the chair, draw the shapes formed by the empty spaces around and through it. Fill in the negative spaces with shading.",
+    "estimatedMinutes": 15
+  },
+  {
+    "slug": "value-scales",
+    "title": "Value Scales",
+    "description": "Create smooth gradients from light to dark to understand tonal range.",
+    "order": 5,
+    "track": "shading",
+    "difficulty": "intermediate",
+    "isPremium": false,
+    "instructions": "Draw a row of 7 boxes. Fill them with progressively darker values from white to black. Each box should be noticeably darker than the previous one, with smooth, even shading.",
+    "estimatedMinutes": 15
+  },
+  {
+    "slug": "light-and-shadow",
+    "title": "Light & Shadow on Form",
+    "description": "Understand how light falls on basic 3D forms: sphere, cube, and cylinder.",
+    "order": 6,
+    "track": "shading",
+    "difficulty": "intermediate",
+    "isPremium": false,
+    "instructions": "Draw a sphere, a cube, and a cylinder. Add a single light source from the upper left. Render the highlight, mid-tone, core shadow, reflected light, and cast shadow on each form.",
+    "estimatedMinutes": 20
+  },
+  {
+    "slug": "cross-hatching",
+    "title": "Cross-Hatching Techniques",
+    "description": "Build tone and texture using overlapping parallel lines at different angles.",
+    "order": 7,
+    "track": "shading",
+    "difficulty": "intermediate",
+    "isPremium": false,
+    "instructions": "Draw a simple object (an apple or egg). Shade it entirely with cross-hatching — no blending. Use line density and angle changes to create light and dark areas.",
+    "estimatedMinutes": 20
+  },
+  {
+    "slug": "blending-techniques",
+    "title": "Blending & Soft Shading",
+    "description": "Create smooth transitions between values using blending tools and techniques.",
+    "order": 8,
+    "track": "shading",
+    "difficulty": "intermediate",
+    "isPremium": true,
+    "instructions": "Draw a sphere and shade it using smooth blending. Start with light pencil strokes and gradually build up darker values. Use a blending stump or your finger to smooth transitions.",
+    "estimatedMinutes": 20
+  },
+  {
+    "slug": "one-point-perspective",
+    "title": "One-Point Perspective",
+    "description": "Draw a scene with a single vanishing point to create depth on a flat surface.",
+    "order": 9,
+    "track": "perspective",
+    "difficulty": "intermediate",
+    "isPremium": true,
+    "instructions": "Draw a horizon line with a single vanishing point at center. Create a hallway or road scene where all parallel lines converge to that point. Add 3-4 objects (buildings, posts) receding into the distance.",
+    "estimatedMinutes": 20
+  },
+  {
+    "slug": "two-point-perspective",
+    "title": "Two-Point Perspective",
+    "description": "Create more dynamic compositions using two vanishing points for realistic architectural forms.",
+    "order": 10,
+    "track": "perspective",
+    "difficulty": "intermediate",
+    "isPremium": true,
+    "instructions": "Place two vanishing points on your horizon line, spread far apart. Draw a building or box form where vertical edges stay vertical, but horizontal edges converge to one of the two vanishing points.",
+    "estimatedMinutes": 25
+  },
+  {
+    "slug": "foreshortening",
+    "title": "Foreshortening",
+    "description": "Draw objects that appear to come toward or recede from the viewer with accurate proportions.",
+    "order": 11,
+    "track": "perspective",
+    "difficulty": "advanced",
+    "isPremium": true,
+    "instructions": "Draw your arm reaching toward you, or a pencil pointing at the viewer. The key is to compress the length of forms that point toward you while keeping width relatively normal.",
+    "estimatedMinutes": 25
+  },
+  {
+    "slug": "atmospheric-perspective",
+    "title": "Atmospheric Perspective",
+    "description": "Use value, detail, and contrast changes to create the illusion of distance in landscapes.",
+    "order": 12,
+    "track": "perspective",
+    "difficulty": "advanced",
+    "isPremium": true,
+    "instructions": "Draw a landscape with 3 layers: foreground, middle ground, and background. Make the foreground darkest with most detail, middle ground lighter with less detail, and background lightest with minimal detail.",
+    "estimatedMinutes": 25
+  }
+]
