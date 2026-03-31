@@ -6,8 +6,8 @@ export default function Home() {
       <p className="text-sm uppercase tracking-wide text-muted-foreground">IdeaBrowser Concept</p>
       <h1 className="text-4xl font-semibold">Daily Drawing Fundamentals Trainer</h1>
       <p className="text-base text-muted-foreground">
-        Learn-to-draw app with AI feedback on every sketch. This scaffold is prepared for
-        implementation with Next.js, Convex, Clerk, TanStack Query/Router, and Playwright/Jest.
+        Learn-to-draw app with AI feedback on every sketch. Built with
+        Next.js, Convex, Clerk, TanStack Query, and Playwright/Jest.
       </p>
       <div className="flex gap-3">
         <Button>Start Lesson</Button>
