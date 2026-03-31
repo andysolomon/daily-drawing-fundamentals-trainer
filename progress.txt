@@ -1,29 +1,44 @@
+[ ] Phase 0 - CI/CD and Semantic Release
+[ ] #1  [W-000001] Configure semantic-release with conventional commits (P0, S)
+[ ] #2  [W-000002] Set up GitHub Actions CI pipeline (P0, M)
+[ ] #3  [W-000003] Enable branch protection rules for main (P0, S)
+[ ] #4  [W-000004] Remove TanStack Router dependency and references (P0, S)
+
 [ ] Phase 1 - Foundation and App Shell
-[ ] #1  [DDT-0001] Configure Clerk auth and protected app routes (P0, M)
-[ ] #2  [DDT-0002] Create Convex schema for users, lessons, submissions, feedback (P0, M)
-[ ] #3  [DDT-0003] Build app shell with lesson hub and profile nav (P1, M)
+[ ] #5  [W-000005] Build app shell layout with navigation and responsive sidebar (P1, M)
+[ ] #6  [W-000006] Integrate Clerk authentication with sign-in and sign-up flows (P0, M)
+[ ] #7  [W-000007] Add route guards and Clerk middleware for protected routes (P0, S)
+[ ] #8  [W-000008] Sync Clerk user to Convex on sign-up via webhook (P1, M)
+[ ] #9  [W-000009] Define Convex schema for users, lessons, submissions, and feedback (P0, M)
+[ ] #10 [W-000010] Create lesson seed data migration script (P0, M)
+[ ] #11 [W-000011] Set up Convex client provider and TanStack Query integration (P1, S)
 
 [ ] Phase 2 - Lesson Engine
-[ ] #4  [DDT-0004] Implement lesson sequence and unlock rule model (P0, M)
-[ ] #5  [DDT-0005] Build lesson detail page with completion flow (P0, M)
-[ ] #6  [DDT-0006] Capture lesson start/completion analytics events (P1, S)
+[ ] #12 [W-000012] Build lesson list page with unlock status indicators (P0, M)
+[ ] #13 [W-000013] Implement lesson unlock rules engine (P0, M)
+[ ] #14 [W-000014] Build lesson detail page with instructions and submission CTA (P0, M)
+[ ] #15 [W-000015] Track lesson start and completion events (P1, S)
 
 [ ] Phase 3 - Sketch Submission + AI Feedback
-[ ] #7  [DDT-0007] Implement sketch upload pipeline (P0, L)
-[ ] #8  [DDT-0008] Build AI feedback adapter with structured response contract (P0, L)
-[ ] #9  [DDT-0009] Build feedback UI for actionable correction hints (P0, M)
+[ ] #16 [W-000016] Build in-browser canvas drawing component (P0, L)
+[ ] #17 [W-000017] Implement photo upload path for sketch submission (P0, M)
+[ ] #18 [W-000018] Store sketch images in Vercel Blob and save submission record (P0, M)
+[ ] #19 [W-000019] Integrate AI Gateway with AI SDK for sketch analysis (P0, L)
+[ ] #20 [W-000020] Build feedback display UI with scores, hints, and strengths (P0, M)
 
 [ ] Phase 4 - Habit and Retention Loop
-[ ] #10 [DDT-0010] Implement streak/day tracking and milestone rules (P0, M)
-[ ] #11 [DDT-0011] Build progress dashboard with habit indicators (P1, M)
-[ ] #12 [DDT-0012] Add week-1 lesson-3 retention instrumentation (P1, S)
+[ ] #21 [W-000021] Implement streak tracking and daily practice calculation (P0, M)
+[ ] #22 [W-000022] Build progress dashboard with lesson count and feedback trends (P1, M)
+[ ] #23 [W-000023] Implement week-1 lesson-3 milestone with congratulations badge (P1, S)
 
 [ ] Phase 5 - Monetization
-[ ] #13 [DDT-0013] Implement subscription plans and entitlement checks (P0, L)
-[ ] #14 [DDT-0014] Gate premium content/feedback tiers (P1, M)
-[ ] #15 [DDT-0015] Build billing management experience (P1, M)
+[ ] #24 [W-000024] Integrate Stripe via Vercel Marketplace for subscription billing (P0, L)
+[ ] #25 [W-000025] Implement premium content gating and entitlement checks (P1, M)
+[ ] #26 [W-000026] Build pricing page and billing management UI (P1, M)
 
 [ ] Phase 6 - Hardening and Launch
-[ ] #16 [DDT-0016] Add Jest tests for lesson rules and feedback rendering (P0, M)
-[ ] #17 [DDT-0017] Add Playwright e2e flows for auth, lesson, upload, feedback (P0, M)
-[ ] #18 [DDT-0018] Complete production readiness checklist for Vercel deploy (P1, S)
+[ ] #27 [W-000027] Add Jest unit tests for lesson rules, streak logic, and entitlements (P0, M)
+[ ] #28 [W-000028] Add Jest component tests for key UI components (P1, M)
+[ ] #29 [W-000029] Add Playwright e2e tests for critical user flows (P0, L)
+[ ] #30 [W-000030] Implement global error handling, loading states, and retry UX (P1, M)
+[ ] #31 [W-000031] Production readiness checklist and Vercel deployment configuration (P1, S)
