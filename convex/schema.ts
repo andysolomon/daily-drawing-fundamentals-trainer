@@ -46,4 +46,16 @@ export default defineSchema({
     summary: v.string(),
     createdAt: v.number(),
   }).index("by_submission", ["submissionId"]),
+
+  events: defineTable({
+    userId: v.id("users"),
+    type: v.string(), // "lesson_started" | "lesson_completed"
+    lessonId: v.id("lessons"),
+    metadata: v.optional(
+      v.object({
+        durationMs: v.optional(v.number()),
+      })
+    ),
+    createdAt: v.number(),
+  }).index("by_user_type_lesson", ["userId", "type", "lessonId"]),
 });
