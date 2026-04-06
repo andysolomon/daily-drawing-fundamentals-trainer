@@ -56,6 +56,20 @@ export const getLatestForLesson = query({
   },
 });
 
+export const markFailed = mutation({
+  args: { submissionId: v.id("submissions") },
+  handler: async (ctx, args) => {
+    await ctx.db.patch(args.submissionId, { feedbackStatus: "failed" });
+  },
+});
+
+export const markPending = mutation({
+  args: { submissionId: v.id("submissions") },
+  handler: async (ctx, args) => {
+    await ctx.db.patch(args.submissionId, { feedbackStatus: "pending" });
+  },
+});
+
 export const getById = query({
   args: { id: v.id("submissions") },
   handler: async (ctx, args) => {
