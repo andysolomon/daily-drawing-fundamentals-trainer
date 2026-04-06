@@ -27,6 +27,10 @@ const trackColors: Record<string, string> = {
 export function LessonDetail({ slug }: { slug: string }) {
   const router = useRouter();
   const lesson = useQuery(api.lessons.getBySlug, { slug });
+  const submission = useQuery(
+    api.submissions.getLatestForLesson,
+    lesson?._id ? { lessonId: lesson._id } : "skip"
+  );
 
   // Track lesson start event
   useTrackLessonStart(lesson?._id);
@@ -87,11 +91,31 @@ export function LessonDetail({ slug }: { slug: string }) {
         </p>
       </Card>
 
-      <div className="flex gap-3">
-        <Link href={`/lessons/${slug}/submit`}>
-          <Button size="lg">Submit Sketch</Button>
-        </Link>
-      </div>
+      {submission ? (
+        <Card className="p-6 space-y-4">
+          <h2 className="font-medium">Your latest submission</h2>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={submission.imageUrl}
+            alt="Your submitted sketch"
+            className="w-full max-w-sm rounded-md border"
+          />
+          <div className="flex flex-wrap gap-3">
+            <Link href={`/lessons/${slug}/feedback/${submission._id}`}>
+              <Button>View Feedback</Button>
+            </Link>
+            <Link href={`/lessons/${slug}/submit`}>
+              <Button variant="outline">Resubmit</Button>
+            </Link>
+          </div>
+        </Card>
+      ) : (
+        <div className="flex gap-3">
+          <Link href={`/lessons/${slug}/submit`}>
+            <Button size="lg">Submit Sketch</Button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

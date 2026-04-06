@@ -2,8 +2,11 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import { useQuery } from "convex/react";
-import { ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useMutation, useQuery } from "convex/react";
+import { upload } from "@vercel/blob/client";
+import { toast } from "sonner";
+import { ArrowLeft, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -14,17 +17,63 @@ import { PhotoUpload } from "@/components/photo-upload";
 import { api } from "@/lib/convex";
 
 export function SubmitForm({ slug }: { slug: string }) {
+  const router = useRouter();
   const lesson = useQuery(api.lessons.getBySlug, { slug });
+  const createSubmission = useMutation(api.submissions.create);
   const canvasRef = useRef<SketchCanvasHandle>(null);
   const [photoFile, setPhotoFile] = useState<File | null>(null);
   const [activeTab, setActiveTab] = useState<"draw" | "photo">("draw");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = () => {
-    // Wired up in PR2
-    if (activeTab === "draw") {
-      console.log("Canvas submit (PR2 will wire upload)");
-    } else if (photoFile) {
-      console.log("Photo submit (PR2 will wire upload)", photoFile.name);
+  const handleSubmit = async () => {
+    if (!lesson) return;
+    setIsSubmitting(true);
+
+    try {
+      // Get the file/blob to upload
+      let fileToUpload: Blob | File | null = null;
+      let filename: string;
+
+      if (activeTab === "draw") {
+        const blob = await canvasRef.current?.exportToBlob();
+        if (!blob) {
+          toast.error("Failed to export canvas");
+          setIsSubmitting(false);
+          return;
+        }
+        fileToUpload = blob;
+        filename = `sketches/${lesson.slug}-${Date.now()}.png`;
+      } else if (photoFile) {
+        fileToUpload = photoFile;
+        const ext = photoFile.name.split(".").pop() ?? "jpg";
+        filename = `sketches/${lesson.slug}-${Date.now()}.${ext}`;
+      } else {
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Upload to Vercel Blob
+      const result = await upload(filename, fileToUpload, {
+        access: "public",
+        handleUploadUrl: "/api/upload",
+      });
+
+      // Create submission record in Convex
+      const submissionId = await createSubmission({
+        lessonId: lesson._id,
+        imageUrl: result.url,
+      });
+
+      toast.success("Sketch submitted!");
+      router.push(`/lessons/${slug}/feedback/${submissionId}`);
+    } catch (error) {
+      console.error("Submission failed:", error);
+      toast.error(
+        error instanceof Error
+          ? `Upload failed: ${error.message}`
+          : "Upload failed. Please try again."
+      );
+      setIsSubmitting(false);
     }
   };
 
@@ -87,8 +136,13 @@ export function SubmitForm({ slug }: { slug: string }) {
       </Tabs>
 
       <div className="flex gap-3">
-        <Button size="lg" onClick={handleSubmit} disabled={!canSubmit}>
-          Submit Sketch
+        <Button
+          size="lg"
+          onClick={handleSubmit}
+          disabled={!canSubmit || isSubmitting}
+        >
+          {isSubmitting && <Loader2 className="h-4 w-4 animate-spin" />}
+          {isSubmitting ? "Uploading..." : "Submit Sketch"}
         </Button>
       </div>
     </div>
