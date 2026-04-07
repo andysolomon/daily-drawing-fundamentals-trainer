@@ -64,6 +64,17 @@ export function SubmitForm({ slug }: { slug: string }) {
         imageUrl: result.url,
       });
 
+      // Fire AI feedback request (don't await — Convex subscription will surface results)
+      fetch("/api/generate-feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          submissionId,
+          lessonSlug: slug,
+          imageUrl: result.url,
+        }),
+      }).catch((err) => console.error("Failed to trigger AI feedback:", err));
+
       toast.success("Sketch submitted!");
       router.push(`/lessons/${slug}/feedback/${submissionId}`);
     } catch (error) {
